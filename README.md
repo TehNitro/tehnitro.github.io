@@ -1,4 +1,0 @@
-# tehnitro
-
-
-hi
