@@ -1,0 +1,89 @@
+body {
+    background: linear-gradient(rgba(20, 26, 35, .55), rgba(20, 26, 35, .55)), url(background.png) no-repeat center center fixed;
+    background-size: cover;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    transition: all 0.5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    margin-top: 25%;
+    margin-left: 4em;
+    font-family: 'Oswald', sans-serif;
+}
+
+ul {
+    list-style: none;
+    font-size: 26px;
+    font-weight: 600;
+    list-style-type: none;
+    padding: 0
+}
+
+li:first-child a {
+    font-size: 4.25rem;
+    font-weight: 700;
+    color: #fb5654;
+    letter-spacing: -2px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+li::before {
+    content: "\f219";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 18px !important;
+    color: #fff;
+    font-size: 10px;
+    position: relative;
+    top: 2px
+}
+
+li:hover {
+    cursor: pointer
+}
+
+li:hover a {
+    color: #42fed0;
+    transform: translateX(10px)
+}
+
+li:hover::before {
+    animation: spin .25s ease forwards;
+    color: #42fed0
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(90deg)
+    }
+}
+
+li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .25s ease
+}
