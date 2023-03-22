@@ -46,6 +46,11 @@ li {
     text-transform: uppercase;
 }
 
+
+li a:active {
+    color: #42fecf85 !important;
+}
+
 li::before {
     content: "\f219";
     font-family: "Font Awesome 5 Free";
