@@ -44,6 +44,7 @@ li {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
+    width: min-content;
 }
 
 
@@ -90,5 +91,5 @@ li a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    transition: all .25s ease
+    transition: all .25s ease;
 }
