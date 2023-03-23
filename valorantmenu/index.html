@@ -19,26 +19,50 @@
 <body>
     <div class="menu" style="display:none;">
         <ul>
-            <li><a href="#" class="menu-item" data-sound-src="hoversfx.mp3">Play</a></li>
-            <li><a href="#" class="menu-item" data-sound-src="hoversfx.mp3">Career</a></li>
-            <li><a href="#" class="menu-item" data-sound-src="hoversfx.mp3">Battlepass</a></li>
-            <li><a href="#" class="menu-item" data-sound-src="hoversfx.mp3">Collection</a></li>
-            <li><a href="#" class="menu-item" data-sound-src="hoversfx.mp3">Store</a></li>
+            <li><a href="#">Play</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Battlepass</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Store</a></li>
         </ul>
     </div>
     <span
         style="font-size: 60px;color: white;font-family: 'Oswald', sans-serif;text-align:center;margin: 48px;">VALORANT
         Main Menu
         Recreation</span>
+    <audio id="bg-audio" loop autoplay>
+        <source src="bgmusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 
-<script>
+<script type="text/javascript">
     jQuery(document).ready(function () {
         setTimeout(function () {
             jQuery('.menu').fadeIn(750);
         }, 700);
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var audio = document.getElementById('bg-audio');
+        var context = new AudioContext();
+        var source = context.createMediaElementSource(audio);
+        var gainNode = context.createGain();
 
+        // Set the initial gain to 0
+        gainNode.gain.value = 0;
+
+        // Connect the audio nodes
+        source.connect(gainNode);
+        gainNode.connect(context.destination);
+
+        // Gradually increase the gain to 1 over 5 seconds
+        gainNode.gain.linearRampToValueAtTime(1, context.currentTime + 10);
+
+        // Start the audio playback
+        audio.play();
+    });
+</script>
 
 </html>
