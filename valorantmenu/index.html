@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@700&display=swap"
         rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>VALORANT Main Menu</title>
@@ -26,43 +25,47 @@
             <li><a href="#">Store</a></li>
         </ul>
     </div>
-    <span
-        style="font-size: 60px;color: white;font-family: 'Oswald', sans-serif;text-align:center;margin: 48px;">VALORANT
-        Main Menu
-        Recreation</span>
-    <audio id="bg-audio" loop autoplay>
+    <div id="button-container">
+        <button id="audio-button"><i class="fa-solid fa-headphones"></i></button>
+        <div id="text-container">
+            <span>Please enable audio.</span>
+        </div>
+    </div>
+
+    <audio id="bg-audio" loop>
         <source src="bgmusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-</body>
 
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        setTimeout(function () {
-            jQuery('.menu').fadeIn(750);
-        }, 700);
-    });
-</script>
+</body>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    function startAudio() {
+        console.log('startAudio() function called');
         var audio = document.getElementById('bg-audio');
         var context = new AudioContext();
         var source = context.createMediaElementSource(audio);
         var gainNode = context.createGain();
 
-        // Set the initial gain to 0
         gainNode.gain.value = 0;
-
-        // Connect the audio nodes
         source.connect(gainNode);
         gainNode.connect(context.destination);
 
-        // Gradually increase the gain to 1 over 5 seconds
         gainNode.gain.linearRampToValueAtTime(1, context.currentTime + 10);
 
-        // Start the audio playback
         audio.play();
-    });
+    }
+
+    var button = document.getElementById('audio-button');
+button.addEventListener('click', function () {
+    jQuery(button).fadeOut(750);
+    jQuery('#button-container').fadeOut(750);
+
+    setTimeout(function () {
+        jQuery('.menu').fadeIn(750);
+    }, 700);
+
+    startAudio();
+});
 </script>
 
 </html>
