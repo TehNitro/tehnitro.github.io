@@ -1,122 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Catalyst</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/246f3ed870.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@700&display=swap"
-        rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <title>VALORANT Main Menu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/246f3ed870.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="menu" style="display:none;">
-        <ul>
-            <li><a href="#">Play</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Battlepass</a></li>
-            <li><a href="#">Collection</a></li>
-            <li><a href="#">Store</a></li>
-        </ul>
-    </div>
-    <div id="button-container">
-        <button id="audio-button"><i class="fa-solid fa-headphones"></i></button>
-        <div id="text-container">
-            <span>Please enable audio.</span>
+    <header>
+        <a href="index.html"><img src="Catalyst128.png" id="logo" alt="Catalyst Logo" width="84" height="84"
+                style="margin-left: 1px;-webkit-user-drag:none;"></a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gameplay">Gameplay</a></li>
+                <li><a href="#modes">Gamemodes</a></li>
+                <li><a href="#maps">Maps</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="wrapper">
+                <img src="heroimg.png" alt="Catalyst Logo" style="margin-bottom: 16px;-webkit-user-drag:none;">
+                <h2>Catalyst</h2>
+                <p>A 5v5 tactical shooter.</p>
+                <form action="#steam">
+                    <button type="submit" class="btn" style="font-family: 'Roboto', sans-serif;">Play Now</button>
+                </form>
+            </div>
+        </section>
+        <div class="cards">
+            <section id="about">
+                <h2>About Catalyst</h2>
+                <p>Catalyst is a first-person shooter game with a monetization system that includes free and purchasable
+                    loot boxes containing skins. The gameplay features four damage zones, bleeding, health, and body
+                    armor.
+                    Players share money, and aiming while moving affects gun recoil. The game features various weapons
+                    and
+                    utilities, with each having unique stats and costs.</p>
+            </section>
+            <section id="gameplay">
+                <h2>Gameplay</h2>
+                <p>Catalyst's gameplay is challenging and exciting, with four damage zones, bleeding, health, and body
+                    armor. Players share money, and aiming while moving affects gun recoil, making accuracy and strategy
+                    crucial to winning. With various weapons and utilities, each with unique stats and costs, you can
+                    customize your gameplay experience to suit your style.</p>
+            </section>
+            <section id="modes">
+                <h2>Gamemodes</h2>
+                <p>Catalyst has different gamemodes to choose from, including Unranked, Ranked, Retakes, Custom,
+                    Deathmatch,
+                    Wingman, and 1v1. Ranked has a skill-based matchmaking system that ensures fair matches, while the
+                    other
+                    modes offer a variety of gameplay styles.</p>
+            </section>
+            <section id="maps">
+                <h2>Maps</h2>
+                <p>Catalyst features five different maps: Sandstorm, Sakura, Street, Shoreside, and Cargo. Each map
+                    offers
+                    unique challenges and strategies, so you'll always have something new to experience.</p>
+            </section>
         </div>
-    </div>
-
-    <audio id="bg-audio" loop>
-        <source src="bgmusic.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
+    </main>
+    <footer>
+        <p>&copy; 2023 Catalyst. All rights reserved.<br><span style="font-style: italic;color: #c0c0c0;">Dust II is
+                used for the background. Cause our maps aren't done yet.*</span></p>
+    </footer>
 </body>
 <script>
-    function startAudio() {
-        console.log('startAudio() function called');
-        var audio = document.getElementById('bg-audio');
-        var context = new AudioContext();
-        var source = context.createMediaElementSource(audio);
-        var gainNode = context.createGain();
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            window.scrollTo({
+                top: target.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
 
-        gainNode.gain.value = 0;
-        source.connect(gainNode);
-        gainNode.connect(context.destination);
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector("header");
+        if (window.scrollY > 1) {
+            navbar.style.height = "60px";
+        } else {
+            navbar.style.height = "84px";
+        }
+    });
 
-        gainNode.gain.linearRampToValueAtTime(1, context.currentTime + 10);
+    const header = document.querySelector('header');
+    const logo = document.querySelector('#logo');
 
-        audio.play();
-    }
-
-    var button = document.getElementById('audio-button');
-button.addEventListener('click', function () {
-    jQuery(button).fadeOut(750);
-    jQuery('#button-container').fadeOut(750);
-
-    setTimeout(function () {
-        jQuery('.menu').fadeIn(750);
-    }, 700);
-
-    startAudio();
-});
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 1) {
+            header.classList.add('small');
+            logo.classList.add('small');
+        } else {
+            header.classList.remove('small');
+            logo.classList.remove('small');
+        }
+    });
 </script>
-    
-    <style>
-        #button-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-color: hsla(0, 0%, 0%, 0.507);
-    text-align: center;
-}
 
-#audio-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: auto;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    transition: left 0.3s ease-out, top 0.3s ease-out;
-    font-size: 24px;
-    cursor: pointer;
-    border: none;
-    color: #000000;
-    z-index: 9999;
-}
-
-#text-container {
-    position: relative;
-    top: 55%;
-    text-align: center;
-    display: block;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-}
-
-#text-container span {
-    display: block;
-}
-
-#title {
-    font-size: 60px;
-    color: white;
-    font-family: 'Oswald', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-        </style>
 </html>
