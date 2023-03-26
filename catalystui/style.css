@@ -10,48 +10,48 @@ html {
     background-color: #111;
     user-select: none;
     -webkit-user-select: none;
-    -moz-user-select: none
+    -moz-user-select: none;
 }
 
 a {
     color: #fff;
     text-decoration: none;
-    transition: all .2s ease-in-out
+    transition: all .2s ease-in-out;
 }
 
 h1,
 h2,
 h3 {
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 h1 {
-    font-size: 4em
+    font-size: 4em;
 }
 
 h2 {
     font-size: 3em;
     text-align: center;
-    margin-bottom: 1em
+    margin-bottom: 1em;
 }
 
 h3 {
-    font-size: 1.5em
+    font-size: 1.5em;
 }
 
 p {
     margin: 0;
     padding: 0;
     font-size: 1.2em;
-    line-height: 1.5
+    line-height: 1.5;
 }
 
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size: 14px
+    font-size: 14px;
 }
 
 .btn {
@@ -65,16 +65,16 @@ ul {
     border: none;
     color: #fff;
     transition: all .25s ease-in-out;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .btn:active {
-    transform: scale(.97);
-    background-color: #be122f
+    padding: 12px 25px;
+    background-color: #be122f;
 }
 
 .btn:hover {
-    background-color: #e02544
+    background-color: #e02544;
 }
 
 header {
@@ -87,11 +87,11 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: height .3s ease-in-out
+    transition: height .3s ease-in-out;
 }
 
 nav {
-    margin-left: auto
+    margin-left: auto;
 }
 
 nav ul {
@@ -99,11 +99,11 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-right: 64px
+    margin-right: 64px;
 }
 
 nav li {
-    margin-left: 1em
+    margin-left: 1em;
 }
 
 nav a {
@@ -112,12 +112,12 @@ nav a {
     font-size: 1.2em;
     font-weight: 700;
     text-transform: uppercase;
-    transition: all .3s ease
+    transition: all .3s ease;
 }
 
 nav a:hover {
     color: #d40e2e;
-    font-size: 17.25px
+    font-size: 17.25px;
 }
 
 #hero {
@@ -135,7 +135,7 @@ nav a:hover {
 #hero a {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 #hero .wrapper {
@@ -144,25 +144,25 @@ nav a:hover {
     border-radius: 8px;
     box-shadow: 10px 8px 65px -1px rgba(0, 0, 0, .75);
     -webkit-box-shadow: 10px 8px 65px -1px rgba(0, 0, 0, .75);
-    -moz-box-shadow: 10px 8px 65px -1px rgba(0, 0, 0, .75)
+    -moz-box-shadow: 10px 8px 65px -1px rgba(0, 0, 0, .75);
 }
 
 #hero h2 {
     text-align: center;
-    margin-bottom: .3em
+    margin-bottom: .3em;
 }
 
 #hero p {
     text-align: center;
     max-width: 800px;
-    margin-bottom: 3em
+    margin-bottom: 3em;
 }
 
 #hero .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
 }
 
 #about {
@@ -172,12 +172,12 @@ nav a:hover {
     margin: auto;
     margin-bottom: 40px;
     margin-top: 40px;
-    position: relative
+    position: relative;
 }
 
 #about p {
     max-width: 800px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 #gameplay {
@@ -186,12 +186,12 @@ nav a:hover {
     width: 50%;
     margin: auto;
     margin-bottom: 40px;
-    position: relative
+    position: relative;
 }
 
 #gameplay p {
     max-width: 800px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 #modes {
@@ -200,12 +200,12 @@ nav a:hover {
     width: 50%;
     margin: auto;
     margin-bottom: 40px;
-    position: relative
+    position: relative;
 }
 
 #modes p {
     max-width: 800px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 #maps {
@@ -214,12 +214,12 @@ nav a:hover {
     width: 50%;
     margin: auto;
     margin-bottom: 150px;
-    position: relative
+    position: relative;
 }
 
 #maps p {
     max-width: 800px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 #about::before {
@@ -231,7 +231,7 @@ nav a:hover {
     top: .5em;
     right: .5em;
     color: #fff;
-    margin: 8px
+    margin: 8px;
 }
 
 #gameplay::before {
@@ -243,7 +243,7 @@ nav a:hover {
     top: .5em;
     right: .5em;
     color: #fff;
-    margin: 8px
+    margin: 8px;
 }
 
 #modes::before {
@@ -255,7 +255,7 @@ nav a:hover {
     top: .5em;
     right: .5em;
     color: #fff;
-    margin: 8px
+    margin: 8px;
 }
 
 #maps::before {
@@ -267,17 +267,17 @@ nav a:hover {
     top: .5em;
     right: .5em;
     color: #fff;
-    margin: 8px
+    margin: 8px;
 }
 
 footer {
     background-color: #333;
     padding: 2em;
-    text-align: center
+    text-align: center;
 }
 
 ::-webkit-scrollbar {
-    display: none
+    display: none;
 }
 
 .cards section {
@@ -285,14 +285,14 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     border-radius: 8px;
     padding: 16px;
-    margin-bottom: 16px
+    margin-bottom: 16px;
 }
 
 #logo {
     margin-left: 1px;
     width: 84px;
     height: 84px;
-    transition: width .3s, height .3s
+    transition: width .3s, height .3s;
 }
 
 #logo.small {
