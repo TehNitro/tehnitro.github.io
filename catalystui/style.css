@@ -294,3 +294,8 @@ footer {
     height: 84px;
     transition: width .3s, height .3s
 }
+
+#logo.small {
+    width: 65px;
+    height: 65px;
+}
