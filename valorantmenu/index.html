@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/246f3ed870.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>VALORANT Main Menu</title>
+</head>
+
+<body>
+    <div class="menu" style="display:none;">
+        <ul>
+            <li><a href="#">Play</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Battlepass</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Store</a></li>
+        </ul>
+    </div>
+    <div id="button-container">
+        <button id="audio-button"><i class="fa-solid fa-headphones"></i></button>
+        <div id="text-container">
+            <span>Please enable audio.</span>
+        </div>
+    </div>
+    <audio id="bg-audio" loop>
+        <source src="bgmusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+<script>
+    function startAudio() {
+        console.log('startAudio() function called');
+        var audio = document.getElementById('bg-audio');
+        var context = new AudioContext();
+        var source = context.createMediaElementSource(audio);
+        var gainNode = context.createGain();
+
+        gainNode.gain.value = 0;
+        source.connect(gainNode);
+        gainNode.connect(context.destination);
+
+        gainNode.gain.linearRampToValueAtTime(1, context.currentTime + 10);
+
+        audio.play();
+    }
+
+    var button = document.getElementById('audio-button');
+    button.addEventListener('click', function () {
+        jQuery(button).fadeOut(750);
+        jQuery('#button-container').fadeOut(750);
+
+        setTimeout(function () {
+            jQuery('.menu').fadeIn(750);
+        }, 700);
+
+        startAudio();
+    });
+</script>
+
+</html>
