@@ -1,0 +1,112 @@
+body,
+html {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(rgba(20, 26, 35, 0.55), rgba(20, 26, 35, 0.55)), url(bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    user-select: none;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    background: inherit;
+    filter: blur(8px);
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#weather-container {
+    position: relative;
+    z-index: 1;
+}
+
+#weather-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#location-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-out;
+    top: auto;
+    left: auto;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #location-btn {
+        top: 90%;
+    }
+}
+
+#location-btn:hover {
+    transform: scale(1.2);
+}
+
+#location-btn:active {
+    opacity: 0.8;
+}
+
+#weather-info {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#weather-info.show {
+    opacity: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#temperature {
+    font-size: 48px;
+    font-weight: 750;
+}
+
+#conditions {
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#city {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 32px;
+}
+
+#error-message {
+    font-size: 48px;
+    font-weight: 600;
+}
