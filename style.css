@@ -35,7 +35,7 @@ video {
 
 header {
     position: absolute;
-    z-index: 999;
+    z-index: 9999;
     margin: 16px;
     display: flex;
     align-items: center;
