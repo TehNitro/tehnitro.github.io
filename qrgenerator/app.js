@@ -13,9 +13,7 @@ function generateQRCode() {
         showError('<i class="fa-solid fa-triangle-exclamation"></i>&nbsp; Please enter data to encode.');
         return;
     }
-    // Clear the contents of the #qrcode element
     document.getElementById('qrcode').innerHTML = '';
-    // Generate the new QR code
     var qrcode = new QRCode(document.getElementById('qrcode'), {
         text: input,
         width: 256,
@@ -24,7 +22,6 @@ function generateQRCode() {
         colorLight: '#ffffff',
         correctLevel: QRCode.CorrectLevel.H
     });
-    // Show the download button
     document.getElementById('downloadBtn').classList.remove('hidden');
 }
 
