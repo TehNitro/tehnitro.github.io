@@ -27,8 +27,40 @@
     <div id="about"></div>
     <div class="modal">
         <div class="modal-content">
-            <button class="modal-close"><img src="static/assets/x.svg" alt="X close icon"></button>
-            <h1>e</h1>
+            <header>
+                <div class="title">
+                    <p class="header-title">Contact me</p>
+                    <p class="header-subtitle">
+                        Give me ideas, ask questions, or give me suggestions for a logo!
+                    </p>
+                </div>
+                <button class="modal-close"><img src="static/assets/x.svg" alt="X close icon" width="18px"
+                        height="18px"></button>
+            </header>
+            <main>
+                <img src="static/assets/logo2.svg" class="loading-logo" width="48px" height="48px">
+                <form action="https://formspree.io/f/mbjezbba" method="POST" id="contactform">
+                    <div class="personal-info">
+                        <label>
+                            Email
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            Name
+                            <input type="text" name="name" required>
+                        </label>
+                    </div>
+                    <label>
+                        <textarea name="text" maxlength="1000"></textarea>
+                    </label>
+                    <div class="submit">
+                        <button class="modal-submit-button" type="submit">
+                            <div>Submit</div>
+                        </button>
+                        <p>Please don't spam :&#40;</p>
+                    </div>
+                </form>
+            </main>
         </div>
     </div>
     <div class="galaxy"><img src="static/assets/galaxy.png" draggable="false"></div>
@@ -38,10 +70,11 @@
             <div class="nav-list">
                 <a href="#about" class="nav-item">About</a>
                 <a href="#recreated-logos" class="nav-item">Recreated logos</a>
+                <a href="/gallery" class="nav-item">Gallery</a>
             </div>
             <div class="nav-buttons">
-                <a class="button-primary  contact-modal">
-                    <div>Contact</div>
+                <a class="button-primary contact-modal">
+                    <div>Contact me</div>
                 </a>
             </div>
         </div>
@@ -172,6 +205,11 @@
                     </div>
                 </div>
             </div>
+
+            <a href="/gallery" class="button-primary" id="showMore">
+                <div>View the gallery <img src="static/assets/arrow.svg"
+                        style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+            </a>
         </div>
         <div class="footer-wrapper">
             <div id="footer">
@@ -183,7 +221,7 @@
                     </div>
                 </div>
                 <a class="button-primary contact-modal">
-                    <div>Contact</div>
+                    <div>Contact me</div>
                 </a>
             </div>
         </div>
@@ -269,11 +307,12 @@
     var contactModal = $(".modal");
 
     $(".contact-modal").on("click", function () {
-        console.log("you clicked")
         if (contactModal.css('display') === 'flex') {
             contactModal.css('display', 'none');
         } else {
             contactModal.css('display', 'flex');
+
+            $("#contactform")[0].reset();
         }
     });
 
