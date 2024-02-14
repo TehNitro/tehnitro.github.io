@@ -259,7 +259,7 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: bigLogoFadeIn 2s ease-in-out forwards;
+    animation: bigLogoFadeIn 2s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
 
 @keyframes bigLogoFadeIn {
