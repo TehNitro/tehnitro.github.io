@@ -241,13 +241,13 @@
     requestAnimationFrame(raf)
 
     $(document).ready(function () {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+       $('a[href^="#"]').each(function() {
+            $(this).on('click', function(e) {
                 e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top
+                }, 'smooth');
             });
         });
 
