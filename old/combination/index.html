@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>4-Digit Combination Lock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #combination {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+
+        #generateBtn {
+            padding: 10px 20px;
+            font-size: 1em;
+            width: 1000px;
+            height: 50vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>4-Digit Combination Lock</h1>
+    <button id="generateBtn">Generate Combination</button>
+    <div id="combination"></div>
+
+    <script>
+        var currentCombination = 0;
+        var combinationDiv = document.getElementById("combination");
+        var generateBtn = document.getElementById("generateBtn");
+
+        generateBtn.addEventListener("click", generateNextCombination);
+
+        function generateNextCombination() {
+            if (currentCombination <= 9999) {
+                combinationDiv.textContent = padNumber(currentCombination++, 4);
+            } else {
+                generateBtn.disabled = true;
+                combinationDiv.textContent = "All combinations generated!";
+            }
+        }
+
+        function padNumber(number, length) {
+            var str = String(number);
+            while (str.length < length) {
+                str = "0" + str;
+            }
+            return str;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta content="I'm Teh, and I make stuff." name="description">
+    <meta content="TehNitro" property="og:title">
+    <meta content="I'm Teh, and I make stuff." property="og:description">
+    <meta content="https://raw.githubusercontent.com/TehNitro/tehnitro.github.io/main/static/assets/banner.png"
+        property="og:image">
+    <meta content="TehNitro" property="twitter:title">
+    <meta content="I'm Teh, and I make stuff." property="twitter:description">
+    <meta content="https://raw.githubusercontent.com/TehNitro/tehnitro.github.io/main/static/assets/banner.png"
+        property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="#0e0e11" data-react-helmet="true" name="theme-color" />
+    <title>TehNitro</title>
+</head>
+
+<body>
+    <div id="about"></div>
+    <div class="modal">
+        <div class="modal-content">
+            <header>
+                <div class="title">
+                    <p class="header-title">Contact me</p>
+                    <p class="header-subtitle">
+                        Give me ideas, ask questions, or give me suggestions for a logo!
+                    </p>
+                </div>
+                <button class="modal-close"><img src="static/assets/x.svg" alt="X close icon" width="18px"
+                        height="18px"></button>
+            </header>
+            <main>
+                <img src="static/assets/logo2.svg" class="loading-logo" width="48px" height="48px">
+                <form action="https://formspree.io/f/mbjezbba" method="POST" id="contactform">
+                    <div class="personal-info">
+                        <label>
+                            Email
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            Name
+                            <input type="text" name="name" required>
+                        </label>
+                    </div>
+                    <label>
+                        <textarea name="text" maxlength="1000"></textarea>
+                    </label>
+                    <div class="submit">
+                        <button class="modal-submit-button" type="submit">
+                            <div>Submit</div>
+                        </button>
+                        <p>Please don't spam :&#40;</p>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+    <div class="galaxy"><img src="static/assets/galaxy.png" draggable="false"></div>
+    <div class="gradient-wrapper">
+        <div class="nav">
+            <a href="index.html" class="logo-link"><img src="/static/assets/logo.svg" class="logo"></a>
+            <div class="nav-list">
+                <a href="#about" class="nav-item">About</a>
+                <a href="#recreated-logos" class="nav-item">Recreated logos</a>
+                <a href="/gallery" class="nav-item">Gallery</a>
+            </div>
+            <div class="nav-buttons">
+                <a class="button-primary contact-modal">
+                    <div>Contact me</div>
+                </a>
+            </div>
+        </div>
+        <div class="hero-wrapper">
+            <div class="logo">
+                <img src="static/assets/logo2.svg" class="big-logo" draggable="false" id="interactive-logo">
+                <div id="blur-circle"><img src="static/assets/glowcircle.svg" draggable="false" id="circle-img"></div>
+            </div>
+            <div class="intro">
+                <h2 class="section-title">I'm Teh</h2>
+                <p class="section-description">and I make stuff</p>
+            </div>
+            <div class="content">
+                <h3 class="content-heading">What I do</h3>
+                <p class="content-paragraph">I recreate logos I find interesting, and play funny games.</p>
+                <div id="spacing"></div>
+                <h3 class="content-heading">Tools I use</h3>
+                <p class="content-paragraph">I use Figma for design, and VS Code for writing spaghetti code.</p>
+            </div>
+            <div class="socials-btn">
+                <a href="https://youtube.com/@TehNitro" target="_blank" class="button-secondary left">
+                    <div><img src="static/assets/youtube.svg" class="icon"></div>
+                </a>
+                <a href="https://youtube.com/@TehNitro" target="_blank" class="button-primary">
+                    <div><img src="static/assets/youtube.svg" class="icon"></div>
+                </a>
+                <a href="https://github.com/TehNitro" target="_blank" class="button-secondary left">
+                    <div><img src="static/assets/github.svg" class="icon"></div>
+                </a>
+                <a href="https://github.com/TehNitro" target="_blank" class="button-primary">
+                    <div><img src="static/assets/github.svg" class="icon"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="recreated-logos">
+        <div class="intro">
+            <h2 class="section-title">Logos</h2>
+            <p class="section-description">here's some logos I've recreated</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <p class="card-heading">Ready or Not</p>
+                <p class="card-paragraph">Void Interactive</p>
+                <div class="reclogo-container">
+                    <img src="static/assets/readyornot.png" class="reclogo-img" draggable="false">
+                    <img src="static/assets/sparkle.svg" alt="Sparkle" class="sparkle"
+                        title="My favorite logo I've recreated.">
+                    <div class="source-btn">
+                        <a href="https://store.steampowered.com/app/1144200/Ready_or_Not/" target="_blank"
+                            class="button-primary">
+                            <div>Source <img src="static/assets/external.svg"
+                                    style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+                        </a>
+                    </div>
+                </div>
+                <p style="margin-top: 16px;font-size: 18px;font-weight: 500;"><img src="static/assets/sparkle.svg"
+                        alt="Sparkle" width="18px" style="margin-right: 8px;">My favorite logo I've recreated.</p>
+            </div>
+
+            <div class="card right">
+                <p class="card-heading">Colorful Ampersand</p>
+                <p class="card-paragraph">Kakha Kakhadzen</p>
+                <div class="reclogo-container">
+                    <img src="static/assets/colorfulampersand.png" class="reclogo-img" draggable="false">
+                    <div class="source-btn">
+                        <a href="https://dribbble.com/shots/22555686-Colorful-Ampersand" target="_blank"
+                            class="button-primary">
+                            <div>Source <img src="static/assets/external.svg"
+                                    style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <p class="card-heading">B.C</p>
+                <p class="card-paragraph">BiggieClean</p>
+                <div class="reclogo-container">
+                    <img src="static/assets/biggieclean.png" class="reclogo-img" draggable="false">
+                    <div class="source-btn">
+                        <a href="https://www.youtube.com/@BiggieClean" target="_blank" class="button-primary">
+                            <div>Source <img src="static/assets/external.svg"
+                                    style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card right">
+                <p class="card-heading">Riot</p>
+                <p class="card-paragraph">Riot Games</p>
+                <div class="reclogo-container">
+                    <img src="static/assets/riotgames.png" class="reclogo-img" draggable="false">
+                    <div class="source-btn">
+                        <a href="https://www.riotgames.com" target="_blank" class="button-primary">
+                            <div>Source <img src="static/assets/external.svg"
+                                    style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <p class="card-heading">Valorant</p>
+                <p class="card-paragraph">Riot Games</p>
+                <div class="reclogo-container">
+                    <img src="static/assets/valorant.png" class="reclogo-img" draggable="false">
+                    <div class="source-btn">
+                        <a href="https://playvalorant.com" target="_blank" class="button-primary">
+                            <div>Source <img src="static/assets/external.svg"
+                                    style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card right">
+                <p class="card-heading">Apex Legends</p>
+                <p class="card-paragraph">Electronic Arts</p>
+                <div class="reclogo-container">
+                    <img src="static/assets/apexlegends.png" class="reclogo-img" draggable="false">
+                    <div class="source-btn">
+                        <a href="https://www.ea.com/games/apex-legends" target="_blank" class="button-primary">
+                            <div>Source <img src="static/assets/external.svg"
+                                    style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="/gallery" class="button-primary" id="showMore">
+                <div>View the gallery <img src="static/assets/arrow.svg"
+                        style="width: 14px;margin-left: 2px;margin-bottom: -1px;"> </div>
+            </a>
+        </div>
+        <div class="footer-wrapper">
+            <div id="footer">
+                <div class="footer-content">
+                    <img src="static/assets/logo.svg" class="footer-logo" draggable="false">
+                    <div class="copyright">
+                        <img src="static/assets/copyright.svg" alt="Copyright Icon (C)">
+                        <p id="copyright-text">TehNitro. All rights reserved.</p>
+                    </div>
+                </div>
+                <a class="button-primary contact-modal">
+                    <div>Contact me</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    })
+
+    function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    $(document).ready(function () {
+       $('a[href^="#"]').each(function() {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+                
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top
+                }, 'smooth');
+            });
+        });
+
+        const logo = $('#interactive-logo');
+        const sensitivity = 30;
+
+        $(document).on('mousemove', function (e) {
+            const xPos = (0.5 - e.clientX / window.innerWidth) * sensitivity;
+            const yPos = (0.5 - e.clientY / window.innerHeight) * sensitivity;
+
+            logo.css('transform', `perspective(1000px) translate(-50%, -50%) rotateX(${yPos}deg) rotateY(${xPos}deg)`);
+        });
+
+        $(document).on('mouseleave', function () {
+            logo.css('transform', 'perspective(1000px) translate(-50%, -50%) rotateX(0) rotateY(0)');
+        });
+
+        const circleImg = $('#circle-img');
+        let angle = 0;
+        const speed = 0.005;
+
+        function moveCircle() {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const radius = 250;
+
+            const x = centerX + radius * Math.cos(angle) - circleImg.width() / 2;
+            const y = centerY + radius * Math.sin(angle) - circleImg.height() / 2;
+
+            circleImg.css({
+                'position': 'absolute',
+                'left': x + 'px',
+                'top': y + 'px'
+            });
+
+            angle += speed;
+
+            requestAnimationFrame(moveCircle);
+        }
+
+        moveCircle();
+
+        const nav = $('.nav');
+        const stickyThreshold = 100;
+
+        $(window).on('scroll', function () {
+            const offset = window.pageYOffset;
+
+            if (offset > stickyThreshold) {
+                nav.addClass('sticky-nav');
+            } else {
+                nav.removeClass('sticky-nav');
+            }
+        });
+    });
+
+    var contactModal = $(".modal");
+
+    $(".contact-modal").on("click", function () {
+        if (contactModal.css('display') === 'flex') {
+            contactModal.css('display', 'none');
+        } else {
+            contactModal.css('display', 'flex');
+
+            $("#contactform")[0].reset();
+        }
+    });
+
+    $(".modal-close").on("click", function (e) {
+        contactModal.css('display', 'none');
+    });
+
+    var currentYear = new Date().getFullYear();
+    $("#copyright-text").prepend(currentYear + " ");
+</script>
+
+</html>

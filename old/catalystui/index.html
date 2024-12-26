@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Catalyst</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/246f3ed870.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="images/Catalyst128.png" id="logo" alt="Catalyst Logo" width="84" height="84"
+                style="margin-left: 1px;-webkit-user-drag:none;"></a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gameplay">Gameplay</a></li>
+                <li><a href="#modes">Gamemodes</a></li>
+                <li><a href="#maps">Maps</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="wrapper">
+                <img src="images/heroimg.png" alt="Catalyst Logo" style="margin-bottom: 16px;-webkit-user-drag:none;">
+                <h2>Catalyst</h2>
+                <p>A 5v5 tactical shooter.</p>
+                <form action="#steam">
+                    <button type="submit" class="btn" style="font-family: 'Roboto', sans-serif;">Play Now</button>
+                </form>
+            </div>
+        </section>
+        <section id="blog">
+            <div class="wrapper">
+                <h2>Latest News</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="images/blog1.png" alt="Blog Post 1" style="-webkit-user-drag: none;">
+                        <div class="card-content">
+                            <h3>How to Improve Your Aim in Catalyst</h3>
+                            <p>Learn some tips and tricks to improve your aim in Catalyst and become a better player.
+                            </p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/blog2.png" alt="Blog Post 2" style="-webkit-user-drag: none;">
+                        <div class="card-content">
+                            <h3>The Best Utility Items in Catalyst</h3>
+                            <p>Find out which utility items are the most useful in Catalyst and how to use them to gain
+                                an advantage.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/blog3.png" alt="Blog Post 3" style="-webkit-user-drag: none;">
+                        <div class="card-content">
+                            <h3>Catalyst's Most Popular Maps</h3>
+                            <p>Discover which maps are the most popular among Catalyst players and why they are so
+                                well-liked.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="line"></div>
+        <div class="cards">
+            <section id="about">
+                <h2>About Catalyst</h2>
+                <p>Catalyst is a first-person shooter game with a monetization system that includes free and purchasable
+                    loot boxes containing skins. The gameplay features four damage zones, bleeding, health, and body
+                    armor.
+                    Players share money, and aiming while moving affects gun recoil. The game features various weapons
+                    and
+                    utilities, with each having unique stats and costs.</p>
+            </section>
+            <section id="gameplay">
+                <h2>Gameplay</h2>
+                <p>Catalyst's gameplay is challenging and exciting, with four damage zones, bleeding, health, and body
+                    armor. Players share money, and aiming while moving affects gun recoil, making accuracy and strategy
+                    crucial to winning. With various weapons and utilities, each with unique stats and costs, you can
+                    customize your gameplay experience to suit your style.</p>
+            </section>
+            <section id="modes">
+                <h2>Gamemodes</h2>
+                <p>Catalyst has different gamemodes to choose from, including Unranked, Ranked, Retakes, Custom,
+                    Deathmatch,
+                    Wingman, and 1v1. Ranked has a skill-based matchmaking system that ensures fair matches, while the
+                    other
+                    modes offer a variety of gameplay styles.</p>
+            </section>
+            <section id="maps">
+                <h2>Maps</h2>
+                <p>Catalyst features five different maps: Sandstorm, Sakura, Street, Shoreside, and Cargo. Each map
+                    offers
+                    unique challenges and strategies, so you'll always have something new to experience.</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Catalyst. All rights reserved.<br><span style="font-style: italic;color: #c0c0c0;">Dust II is
+                used for the background. Cause our maps aren't done yet.*</span></p>
+    </footer>
+</body>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            window.scrollTo({
+                top: target.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector("header");
+        if (window.scrollY > 1) {
+            navbar.style.height = "60px";
+        } else {
+            navbar.style.height = "84px";
+        }
+    });
+
+    const header = document.querySelector('header');
+    const logo = document.querySelector('#logo');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 1) {
+            header.classList.add('small');
+            logo.classList.add('small');
+        } else {
+            header.classList.remove('small');
+            logo.classList.remove('small');
+        }
+    });
+</script>
+<style>
+    #blog {
+        background-color: #111;
+        padding: 50px 0;
+    }
+
+    #blog h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto 40px;
+        background-color: #222;
+        border-radius: 8px;
+        overflow: hidden;
+
+    }
+
+    .card img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        flex: 1;
+    }
+
+    .card h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .card p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .card a {
+        display: inline-block;
+        text-align: center;
+        font-size: 14px;
+        padding: 8px 16px;
+        background-color: #e02544;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.2s;
+        width: 25%;
+        font-weight: bold;
+    }
+
+    .card a:hover {
+        background-color: #be1935;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card-content {
+            text-align: center;
+        }
+    }
+
+    #line {
+        width: 95%;
+        border-bottom: 2px #1b1b1b solid;
+        margin: auto;
+        border-radius: 4px;
+    }
+</style>
+
+</html>

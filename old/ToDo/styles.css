@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    user-select: none;
+}
+
+:focus {
+    outline: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-item {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.add-item-container {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+}
+
+.add-item input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    margin-right: -5px;
+    font-size: 16px;
+}
+
+.add-item button#add-button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+.add-item button#add-button:hover {
+    background-color: #41a144;
+}
+
+.add-item button#remove-button {
+    padding: 10px;
+    background-color: #c21e1e;
+    color: #fff;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    float: left;
+}
+
+.add-item button#remove-button:hover {
+    background-color: #b41c1c;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 350px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.card p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    word-wrap: break-word;
+}
+
+.card button {
+    padding: 5px 10px;
+    background-color: #369ef4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: background-color 0.5s ease;
+}
+
+.card button:hover {
+    background-color: #3094e6;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
